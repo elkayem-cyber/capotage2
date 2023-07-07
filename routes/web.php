@@ -22,10 +22,9 @@ Auth::routes();
 Route::prefix('')->group(function () {
     Route::get('/', [App\Http\Controllers\User\GetController::class, 'index'])->name('user.index');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 });
-Route::prefix('vendeur')->group(function () {
-
+Route::group(['prefix' => 'vendeur','middleware' => ['auth:vendor']], function () {
+    Route::get('/', [App\Http\Controllers\Vendor\GetController::class, 'index'])->name('vendor.index');
 });
-Route::get('Login_Vendeur', [LoginController::class, 'ShowloginVendor'])->name('Vendor.login.show');
-Route::post('Login_Vendeur', [LoginController::class, 'loginVendor'])->name('Vendor.login.submit');
+Route::get('Login_Vendeur', [LoginController::class, 'ShowloginVendor'])->name('vendor.login.show');
+Route::post('Login_Vendeur', [LoginController::class, 'loginVendor'])->name('vendor.login.submit');

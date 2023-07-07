@@ -49,7 +49,7 @@ class LoginController extends Controller
             'password' => 'required|min:6'
         ]);
         if (Auth::guard('vendor')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-          /*   return redirect()->route('vendor.index'); */
+            return redirect()->route('vendor.index');
         }
         return back()->withInput($request->only('email'));
     }

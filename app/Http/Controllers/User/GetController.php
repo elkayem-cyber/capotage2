@@ -10,4 +10,10 @@ class GetController extends Controller
    public function index(){
     return view('User.index');
    }
+   public function contact(){
+    return view('User.contact');
+   }
+   public function maps(){
+    return view('User.maps');
+   }
 }

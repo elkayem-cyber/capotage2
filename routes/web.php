@@ -21,7 +21,11 @@ Auth::routes();
 
 Route::prefix('')->group(function () {
     Route::get('/', [App\Http\Controllers\User\GetController::class, 'index'])->name('user.index');
+    Route::get('/à-propos', [App\Http\Controllers\User\GetController::class, 'about'])->name('user.about');
+    Route::get('/contact', [App\Http\Controllers\User\GetController::class, 'contact'])->name('user.contact');
+
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/maps', [App\Http\Controllers\User\GetController::class, 'maps'])->name('maps');
 });
 Route::group(['prefix' => 'vendeur','middleware' => ['auth:vendor']], function () {
     Route::get('/', [App\Http\Controllers\Vendor\GetController::class, 'index'])->name('vendor.index');

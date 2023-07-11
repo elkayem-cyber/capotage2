@@ -23,7 +23,9 @@ Route::prefix('')->group(function () {
     Route::get('/', [App\Http\Controllers\User\GetController::class, 'index'])->name('user.index');
     Route::get('/à-propos', [App\Http\Controllers\User\GetController::class, 'about'])->name('user.about');
     Route::get('/contact', [App\Http\Controllers\User\GetController::class, 'contact'])->name('user.contact');
-
+    Route::get('/services', [App\Http\Controllers\User\GetController::class, 'services'])->name('user.services');
+    Route::get('/produits', [App\Http\Controllers\User\GetController::class, 'produits'])->name('user.produits');
+    Route::get('/panier', [App\Http\Controllers\User\GetController::class, 'paniers'])->name('user.paniers');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/maps', [App\Http\Controllers\User\GetController::class, 'maps'])->name('maps');
 });

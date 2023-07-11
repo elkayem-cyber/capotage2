@@ -17,12 +17,12 @@
                             <!-- Language Dropdown -->
 
                             <!-- Login -->
-                            <div class="login">
-                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Se Connecter</span></a>
-                            </div>
+                          {{--   <div class="login">
+                                <a href="{{ route('login') }}"><i class="fa fa-user" aria-hidden="true"></i> <span>Se Connecter</span></a>
+                            </div> --}}
                             <!-- Cart -->
                             <div class="cart">
-                                <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Panier <span class="cart-quantity">(1)</span></span></a>
+                                <a href="{{ route('user.paniers') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Panier <span class="cart-quantity">(1)</span></span></a>
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                 <nav class="classy-navbar justify-content-between" id="alazeaNav">
 
                     <!-- Nav Brand -->
-                    <a href="index.html" class="nav-brand"><img src="{{ asset('assets/img/core-img/logo.png') }}" alt=""></a>
+                    <a href="{{ route('user.index') }}" class="nav-brand"><img src="{{ asset('assets/img/core-img/logo.png') }}" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -57,18 +57,26 @@
                         <!-- Navbar Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="index.html">Accueil</a></li>
-                                <li><a href="about.html">À propos</a></li>
+                                <li><a href="{{ route('user.index') }}">Accueil</a></li>
+                                <li><a href="{{ route('user.about') }}">À propos</a></li>
 
-                                <li><a href="shop.html">Services</a></li>
-                                <li><a href="portfolio.html">Produits</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{ route('user.services') }}">Services</a></li>
+                                <li><a href="{{ route('user.produits') }}">Produits</a></li>
+                                <li><a href="{{ route('user.contact') }}">Contact</a></li>
+                                <li class="has-down"><a href="#">Connexion</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{ route('login') }}">Acheteur</a></li>
+                                        <li><a href="{{ route('vendor.login.show') }}">Vendeur</a></li>
+
+                                    </ul>
+                                <span class="dd-trigger"></span></li>
                             </ul>
 
                             <!-- Search Icon -->
                             <div id="searchIcon">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </div>
+
 
                         </div>
                         <!-- Navbar End -->

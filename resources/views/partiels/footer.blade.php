@@ -107,10 +107,10 @@
                     <div class="copywrite-text">
                         <p>&copy;
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Droits d'auteur &copy;<script>
+                            <script>
                                 document.write(new Date().getFullYear());
 
-                            </script> Tous les droits sont réservés | Ce modèle est réalisé avec <i class="fa fa-heart-o" aria-hidden="true"></i> par <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            </script> Tous les droits sont réservés |  developé avec <i class="fa fa-heart-o" aria-hidden="true"></i> par <a href="{{ route('user.index') }}" target="_blank">Capotage</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
@@ -120,12 +120,12 @@
                     <div class="footer-nav">
                         <nav>
                             <ul>
-                                <li><a href="#">Accueil</a></li>
-                                <li><a href="#">À propos</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Portfolio</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="{{ route('user.index') }}">Accueil</a></li>
+                                <li><a href="{{ route('user.about') }}">À propos</a></li>
+                                <li><a href="{{ route('user.services') }}">Services</a></li>
+                                <li><a href="{{ route('user.produits') }}">Produits</a></li>
+                                <li><a href="{{ route('user.contact') }}">Contact</a></li>
+
                             </ul>
                         </nav>
                     </div>

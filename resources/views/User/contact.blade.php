@@ -62,8 +62,8 @@
                 <!-- Section Heading -->
                 <div class="section-heading">
 
-<h2>ENTREZ EN CONTACT</h2>
-            
+                    <h2>ENTREZ EN CONTACT</h2>
+
                 </div>
                 <!-- Contact Form Area -->
                 <div class="contact-form-area mb-100">
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn alazea-btn mt-15">>Envoyer le message</button>
+                                <button type="submit" class="btn alazea-btn mt-15">Envoyer le message</button>
                             </div>
                         </div>
                     </form>

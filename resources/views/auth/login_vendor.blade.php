@@ -21,17 +21,28 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="contact-form-area mb-100">
-                    <form action="#" method="post">
+                    <form action="{{ route('vendor.login.submit') }}" method="post">
+                        @csrf
                         <div class="row">
 
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="contact-subject" placeholder="Email">
+                                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="contact-subject" placeholder="Email" name="email">
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="contact-subject" placeholder="Mot de passe">
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror"  id="contact-subject" placeholder="Mot de passe" name="password">
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12 ">
@@ -48,7 +59,7 @@
                                 <button type="submit" class="btn alazea-btn mt-15">Se Connecter</button>
                             </div>
                             <div class="col-12 mt-4">
-                                <a href="{{ route('register') }}">J'ai un compte</a>
+                                <a href="{{ route('vendor.regsiter.show') }}">S'inscrire</a>
                             </div>
                         </div>
 

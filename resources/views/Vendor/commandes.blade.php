@@ -4,7 +4,7 @@
 
 <div class="breadcrumb-area">
     <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url({{ asset('assets/img/bg-img/24.jpg') }});">
-        <h2>Espace Vendeur</h2>
+        <h2>Espace Vendeur/Commandes</h2>
     </div>
 
     <div class="container">
@@ -13,29 +13,50 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('user.index') }}"><i class="fa fa-home"></i> Accueil</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Espace Vendeur</li>
+                        <li class="breadcrumb-item"><a href="{{ route('vendor.index') }}"> Espace Vendeur</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Commandes</li>
                     </ol>
                 </nav>
+
             </div>
         </div>
         <div class="row">
             <div class="col-md-9">
-                <div class="single-widget-area">
-                    <!-- Author Widget -->
-                    <div class="author-widget">
-                        <div class="author-thumb-name d-flex align-items-center">
-                            <div class="author-thumb">
-                                <img src="{{ asset('assets/img/bg-img/29.jpg') }}" alt="">
-                            </div>
-                            <div class="author-name">
-                                <h5>{{ auth::guard('vendor')->user()->first_name }} &nbsp;{{ auth::guard('vendor')->user()->last_name }}</h5>
-                                <p>{{ auth::guard('vendor')->user()->email }}</p>
-                            </div>
-                        </div>
-                        <p>{{ auth::guard('vendor')->user()->bio }}</p>
 
-                    </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <th>Client</th>
+                            <th>Produit</th>
+                            <th>Quantité</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            @foreach ($orderLines as $line)
+                            <tr>
+                                <td>
+                                    {{ $line->order->user->first_name }} {{ $line->order->user->last_name }}
+                                </td>
+                                <td>
+                                    {{ $line->product->name }}
+
+                                </td>
+                                <td>
+                                    {{ $line->quantity_requested }}
+
+                                </td>
+                                <td>
+
+                                    <a href="{{ route('vendor.Consulter_commandes',$line->id) }}"><span class="bg-success p-1 text-white rounded"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span> </a>
+
+                                </td>
+                            </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
                 </div>
+
 
             </div>
             <div class="col-md-3">
@@ -61,6 +82,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <a href="{{ route('venor.ancienne_ventes') }}">Anciennes Ventes</a>
+
                             </div>
                         </div>
                         <div class="row">
@@ -70,7 +92,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <a  href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">Déconnexion</a>
                             </div>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

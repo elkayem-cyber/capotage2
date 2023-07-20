@@ -720,7 +720,7 @@ img {
       opacity: 0;
       -webkit-transition-duration: 500ms;
       transition-duration: 500ms; }
-      .single-product-area .product-img .product-meta a {
+      .single-product-area .product-img .product-meta a,.single-product-area .product-img .product-meta button {
         font-size: 16px;
         color: #ffffff;
         font-weight: 600;
@@ -734,7 +734,11 @@ img {
         line-height: 50px;
         text-transform: uppercase;
         text-align: center; }
-        .single-product-area .product-img .product-meta a:hover, .single-product-area .product-img .product-meta a:focus {
+        .single-product-area .product-img .product-meta button{
+            cursor: pointer;
+            border: none;
+        }
+        .single-product-area .product-img .product-meta a:hover, .single-product-area .product-img .product-meta a:focus,        .single-product-area .product-img .product-meta button:hover, .single-product-area .product-img .product-meta button:focus {
           background-color: #70c745; }
         @media only screen and (min-width: 992px) and (max-width: 1199px) {
           .single-product-area .product-img .product-meta a {

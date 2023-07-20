@@ -17,18 +17,22 @@
                             <!-- Language Dropdown -->
 
                             <!-- Login -->
-                          {{--   <div class="login">
+                            {{-- <div class="login">
                                 <a href="{{ route('login') }}"><i class="fa fa-user" aria-hidden="true"></i> <span>Se Connecter</span></a>
-                            </div> --}}
-                            <!-- Cart -->
-                            <div class="cart">
-                                <a href="{{ route('user.paniers') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Panier <span class="cart-quantity">(1)</span></span></a>
-                            </div>
+                        </div> --}}
+                        <!-- Cart -->
+                        <div class="cart">
+                            <a href="{{ route('user.paniers') }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Panier <span class="cart-quantity">
+                                        @if (\Cart::getContent()->count() > 0)
+                                        ({{ \Cart::getContent()->count() }})
+                                        @endif
+                                    </span></span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- ***** Navbar Area ***** -->
@@ -63,13 +67,47 @@
                                 <li><a href="{{ route('user.services') }}">Services</a></li>
                                 <li><a href="{{ route('user.produits') }}">Produits</a></li>
                                 <li><a href="{{ route('user.contact') }}">Contact</a></li>
+                                @if(!Auth::guard('web')->user()&& !Auth::guard('vendor')->user())
                                 <li class="has-down"><a href="#">Connexion</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ route('login') }}">Acheteur</a></li>
                                         <li><a href="{{ route('vendor.login.show') }}">Vendeur</a></li>
 
                                     </ul>
-                                <span class="dd-trigger"></span></li>
+                                    <span class="dd-trigger"></span>
+                                </li>
+                                @else
+                                @if(Auth::guard('web')->user())
+                                <li class="has-down"><a href="#">{{ Auth::guard('web')->user()->first_name }}</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{ route('login') }}">Mon Profile</a></li>
+                                        <li><a href="{{ route('vendor.login.show') }}">Déconnexion</a></li>
+
+                                    </ul>
+                                    <span class="dd-trigger"></span>
+                                </li>
+
+
+                                @endif
+                                @if(Auth::guard('vendor')->user())
+
+                                <li class="has-down"><a href="#">{{ Auth::guard('vendor')->user()->first_name }}</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{ route('vendor.profile') }}">Mon Profile</a></li>
+                                        <li><a href="{{ route('venor.ancienne_ventes') }}">Vente</a></li>
+                                        <li><a href="{{ route('vendor.commandes') }}">Achats</a></li>
+                                        <li><a onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">Déconnexion</a></li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </ul>
+                                    <span class="dd-trigger"></span>
+                                </li>
+
+                                @endif
+                                @endif
+
                             </ul>
 
                             <!-- Search Icon -->

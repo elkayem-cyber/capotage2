@@ -4,7 +4,7 @@
 
 <div class="breadcrumb-area">
     <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url({{ asset('assets/img/bg-img/24.jpg') }});">
-        <h2>Espace Vendeur</h2>
+        <h2>Espace Vendeur/Mon Profile</h2>
     </div>
 
     <div class="container">
@@ -13,9 +13,11 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('user.index') }}"><i class="fa fa-home"></i> Accueil</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Espace Vendeur</li>
+                        <li class="breadcrumb-item"><a href="{{ route('vendor.index') }}"> Espace Vendeur</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Mon Profile</li>
                     </ol>
                 </nav>
+
             </div>
         </div>
         <div class="row">
@@ -55,12 +57,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <a href="{{ route('vendor.nouvelle_vente') }}">Nouvelle Vente</a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <a href="{{ route('venor.ancienne_ventes') }}">Anciennes Ventes</a>
+                                <a href="{{ route('vendor.annonces') }}">Annonces</a>
                             </div>
                         </div>
                         <div class="row">

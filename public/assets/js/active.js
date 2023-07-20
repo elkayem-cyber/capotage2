@@ -90,7 +90,7 @@
     }
 
     // :: 6.0 magnificPopup Active Code
-    if ($.fn.magnificPopup) {
+  /*   if ($.fn.magnificPopup) {
         $('.portfolio-img, .product-img').magnificPopup({
             gallery: {
                 enabled: true
@@ -100,7 +100,7 @@
         $('.video-icon').magnificPopup({
             type: 'iframe'
         });
-    }
+    } */
 
     // :: 7.0 Barfiller Active Code
     if ($.fn.barfiller) {

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
+
 class LoginController extends Controller
 {
     /*
@@ -59,7 +61,7 @@ class LoginController extends Controller
 
         if(Auth::guard('vendor')->check()) { // this means that the admin was logged in.
             Auth::guard('vendor')->logout();
-            return redirect()->route('Vendor.login.show');
+            return redirect()->route('vendor.login.show');
 
         } else {
             Auth::guard('web')->logout();

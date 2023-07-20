@@ -19,6 +19,197 @@
             </div>
         </div>
     </div>
+    <section class="about-us-area section-padding-100-0">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-12 col-lg-5">
+              <!-- Section Heading -->
+              <div class="section-heading">
+                <h2>À PROPOS DE NOUS</h2>
+                <p>Nous sommes leaders dans le domaine des services de jardinage.</p>
+              </div>
+
+              <!-- Progress Bar Content Area -->
+              <div class="alazea-progress-bar mb-50">
+                <!-- Single Progress Bar -->
+                <div class="single_progress_bar">
+                  <p>Plantes de bureau</p>
+                  <div id="bar1" class="barfiller">
+                    <div class="tipWrap">
+                      <span class="tip"></span>
+                    </div>
+                    <span class="fill" data-percentage="80"></span>
+                  </div>
+                </div>
+
+                <!-- Single Progress Bar -->
+                <div class="single_progress_bar">
+                  <p>Gestionnaire de terrain</p>
+                  <div id="bar2" class="barfiller">
+                    <div class="tipWrap">
+                      <span class="tip"></span>
+                    </div>
+                    <span class="fill" data-percentage="70"></span>
+                  </div>
+                </div>
+
+                <!-- Single Progress Bar -->
+                <div class="single_progress_bar">
+                  <p>Design paysager</p>
+                  <div id="bar3" class="barfiller">
+                    <div class="tipWrap">
+                      <span class="tip"></span>
+                    </div>
+                    <span class="fill" data-percentage="85"></span>
+                  </div>
+                </div>
+
+                <!-- Single Progress Bar -->
+                <div class="single_progress_bar">
+                  <p>Entretien des jardins</p>
+                  <div id="bar4" class="barfiller">
+                    <div class="tipWrap">
+                      <span class="tip"></span>
+                    </div>
+                    <span class="fill" data-percentage="65"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <div class="alazea-benefits-area">
+                <div class="row">
+                  <!-- Single Benefits Area -->
+                  <div class="col-12 col-sm-6">
+                    <div class="single-benefits-area">
+                      <img src="{{ asset('assets/img/core-img/b1.png') }}" alt="" />
+                      <h5>Produits de qualité</h5>
+                      <p>
+                        Nous proposons des produits de haute qualité pour garantir
+                        votre satisfaction. Faites confiance à notre expertise pour
+                        des résultats exceptionnels.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Single Benefits Area -->
+                  <div class="col-12 col-sm-6">
+                    <div class="single-benefits-area">
+                      <img src="{{ asset('assets/img/core-img/b2.png') }}" alt="" />
+                      <h5>Service parfait</h5>
+                      <p>
+                        Nous offrons un service impeccable pour répondre à tous vos
+                        besoins. Notre équipe dévouée est là pour vous offrir une
+                        expérience exceptionnelle.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Single Benefits Area -->
+                  <div class="col-12 col-sm-6">
+                    <div class="single-benefits-area">
+                      <img src="{{ asset('assets/img/core-img/b3.png') }}" alt="" />
+                      <h5>100% naturel</h5>
+                      <p>
+                        Nos produits et nos pratiques respectent l'environnement.
+                        Profitez de nos services naturels pour créer un espace sain et
+                        préservé.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Single Benefits Area -->
+                  <div class="col-12 col-sm-6">
+                    <div class="single-benefits-area">
+                      <img src="{{ asset('assets/img/core-img/b4.png') }}" alt="" />
+                      <h5>Respect de l'environnement</h5>
+                      <p>
+                        Nous nous engageons à adopter des pratiques respectueuses de
+                        l'environnement. Contribuons ensemble à la préservation de
+                        notre belle planète.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="border-line"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class=" mb-100 cool-facts-area bg-img section-padding-100-0" style="background-image: url({{ asset('assets/img/bg-img/cool-facts.png') }});">
+        <div class="container">
+            <div class="row">
+
+                <!-- Single Cool Facts Area -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                        <div class="cf-icon">
+                            <img src="{{ asset('assets/img/core-img/cf1.png') }}" alt="">
+                        </div>
+                        <div class="cf-content">
+                            <h2><span class="counter">{{ App\Models\Product::count() }}</span></h2>
+                            <h6>Produits</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Cool Facts Area -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                        <div class="cf-icon">
+                            <img src="{{ asset('assets/img/core-img/cf2.png') }}" alt="">
+                        </div>
+                        <div class="cf-content">
+                            <h2><span class="counter">{{ App\Models\Order::count() }}</span></h2>
+                            <h6>Commandes</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Cool Facts Area -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                        <div class="cf-icon">
+                            <img src="{{ asset('assets/img/core-img/cf3.png') }}" alt="">
+                        </div>
+                        <div class="cf-content">
+                            <h2><span class="counter">{{ App\Models\User::count() }}</span></h2>
+                            <h6>CLIENTS</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Cool Facts Area -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="single-cool-fact d-flex align-items-center justify-content-center mb-100">
+                        <div class="cf-icon">
+                            <img src="{{ asset('assets/img/core-img/cf4.png') }}" alt="">
+                        </div>
+                        <div class="cf-content">
+                            <h2><span class="counter">{{ App\Models\Vendor::count() }}</span>K+</h2>
+                            <h6>Vendeurs</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Side Image -->
+        <div class="side-img wow fadeInUp" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">
+            <img src="{{ asset('assets/img/core-img/pot.png') }}" alt="">
+        </div>
+    </section>
 </div>
 
 

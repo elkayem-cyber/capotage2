@@ -26,7 +26,6 @@ Route::prefix('')->group(function () {
     Route::get('/', [App\Http\Controllers\User\GetController::class, 'index'])->name('user.index');
     Route::get('/à-propos', [App\Http\Controllers\User\GetController::class, 'about'])->name('user.about');
     Route::get('/contact', [App\Http\Controllers\User\GetController::class, 'contact'])->name('user.contact');
-    Route::get('/services', [App\Http\Controllers\User\GetController::class, 'services'])->name('user.services');
     Route::get('/produits', [App\Http\Controllers\User\GetController::class, 'produits'])->name('user.produits');
     Route::get('/panier', [App\Http\Controllers\User\GetController::class, 'paniers'])->name('user.paniers');
     Route::get('/mes-commandes', [App\Http\Controllers\User\GetController::class, 'mes_commandes'])->name('user.commandes')->middleware('auth:web');
@@ -56,6 +55,8 @@ Route::group(['prefix' => 'vendeur','middleware' => ['auth:vendor']], function (
     Route::post('/Changer-etat-produit{id}', [App\Http\Controllers\Vendor\UpdateController::class, 'update_state_product'])->name('vendor.update.status.product');
     Route::get('/Consulter-Produit{id}', [App\Http\Controllers\Vendor\GetController::class, 'show_product'])->name('vendor.show.product');
     Route::post('/Modifier-Produit{id}', [App\Http\Controllers\Vendor\UpdateController::class, 'update_product'])->name('vendor.update.product');
+    Route::post('/Modifier-Profile', [App\Http\Controllers\Vendor\UpdateController::class, 'update_profile'])->name('vendor.update.profile');
+    Route::post('/Changer-Mot-passe', [App\Http\Controllers\Vendor\UpdateController::class, 'update_password'])->name('vendor.update.password');
 
 
 });

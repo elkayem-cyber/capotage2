@@ -7,6 +7,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UpdateController extends Controller
 {
@@ -110,5 +111,69 @@ class UpdateController extends Controller
             return redirect()->back()->with('success', 'Modification Produits  avec succès.');
 
         }
+    }
+    public function update_profile(Request $request)
+    {
+        $vendor=Auth::guard('vendor')->user();
+        $this->validate($request, [
+            'email'=>"required|unique:vendors,email,$vendor->id|email",
+            'first_name'=>'required|alpha',
+            'last_name'=>'required|alpha',
+            'phone_number'=>'required|numeric',
+            'avatar'=>'image',
+            ], [
+                'email.required'=>'Champ Obligatoire',
+                'email.unique'=>'email exist deja',
+                'first_name.required'=>'Champ Obligatoire',
+                'first_name.alpha'=>'Champ Invalid',
+                'last_name.required'=>'Champ Obligatoire',
+                'last_name.alpha'=>'Champ Invalid',
+                'phone_number.required'=>'Champ Obligatoire',
+                'phone_number.numeric'=>'Champ Invalid',
+                'avatar.image'=>'il faut choisir une image',
+
+            ]);
+      
+        $vendor->first_name = $request->first_name;
+        $vendor->last_name = $request->last_name;
+        $vendor->phone_number = $request->phone_number;
+        $vendor->email = $request->email;
+        $vendor->bio = $request->bio;
+        if ($request->avatar) {
+            if ($vendor->avatar) {
+                unlink($vendor->avatar);
+            }
+            $file = $request->file('avatar');
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+            $file_path='Uploads/Avatar/';
+            $file->move(public_path($file_path), $filename);
+            $vendor->avatar=$file_path.$filename;
+        }
+
+        $vendor->save();
+
+        return redirect()->back()->with('success', 'Modification Coordonnées  avec succès.');
+
+    }
+
+
+    public function update_password(Request $request)
+    {
+        $this->validate($request, [
+
+            'password'=>'required|confirmed|min:8',
+            ], [
+            'password.required'=>'Champ Obligatoire',
+                'password.confirmed'=>'Erreur de Confirmation mot de passe',
+                'password.min'=>'Mot de passe contient au minimum 8 caractères ',
+
+            ]);
+            $vendor=Auth::guard('vendor')->user();
+      
+        $vendor->password = Hash::make($request->password);
+        $vendor->save();
+
+        return redirect()->back()->with('success', 'Mot de passe Changé  avec succès.');
+
     }
 }

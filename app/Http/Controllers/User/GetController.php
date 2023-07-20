@@ -20,10 +20,7 @@ class GetController extends Controller
     {
         return view('User.about');
     }
-    public function services()
-    {
-        return view('User.services');
-    }
+  
     public function produits()
     {
         $products=Product::where('is_actif', true)->

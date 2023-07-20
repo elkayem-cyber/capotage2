@@ -64,7 +64,7 @@
                                 <li><a href="{{ route('user.index') }}">Accueil</a></li>
                                 <li><a href="{{ route('user.about') }}">À propos</a></li>
 
-                                <li><a href="{{ route('user.services') }}">Services</a></li>
+                            
                                 <li><a href="{{ route('user.produits') }}">Produits</a></li>
                                 <li><a href="{{ route('user.contact') }}">Contact</a></li>
                                 @if(!Auth::guard('web')->user()&& !Auth::guard('vendor')->user())

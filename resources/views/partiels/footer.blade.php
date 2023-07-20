@@ -122,7 +122,7 @@
                             <ul>
                                 <li><a href="{{ route('user.index') }}">Accueil</a></li>
                                 <li><a href="{{ route('user.about') }}">À propos</a></li>
-                                <li><a href="{{ route('user.services') }}">Services</a></li>
+                                
                                 <li><a href="{{ route('user.produits') }}">Produits</a></li>
                                 <li><a href="{{ route('user.contact') }}">Contact</a></li>
 

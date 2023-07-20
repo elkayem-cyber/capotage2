@@ -29,6 +29,9 @@ Route::prefix('')->group(function () {
     Route::get('/produits', [App\Http\Controllers\User\GetController::class, 'produits'])->name('user.produits');
     Route::get('/panier', [App\Http\Controllers\User\GetController::class, 'paniers'])->name('user.paniers');
     Route::get('/mes-commandes', [App\Http\Controllers\User\GetController::class, 'mes_commandes'])->name('user.commandes')->middleware('auth:web');
+    Route::get('/details-produit{id}', [App\Http\Controllers\User\GetController::class, 'show_produit'])->name('user.show_produit');
+    Route::get('/mes-messages', [App\Http\Controllers\User\GetController::class, 'mes_messages'])->name('user.mes_messages');
+    Route::get('/messages{id}', [App\Http\Controllers\User\GetController::class, 'messages_by_id'])->name('user.messages_by_id');
 
     /* Panier Start */
     Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');

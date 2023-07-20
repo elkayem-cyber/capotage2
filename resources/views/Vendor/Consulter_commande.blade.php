@@ -99,7 +99,8 @@
 
                                         <div class="products--meta">
                                             <p><span>Client:</span> <span>{{ $ligne->order->user->first_name }} &nbsp;{{ $ligne->order->user->last_name }}</span></p>
-                                            <p><span>Contact:</span> <span>{{ $ligne->order->user->phone_number }}</span></p>
+                                            <p><span>Téléphone:</span> <span>{{ $ligne->order->user->phone_number }}</span></p>
+                                            <p><span>Adresse:</span> <span>{{ $ligne->order->user->adress }}</span></p>
                                             <p><span>Stock:</span> <span>{{ $ligne->product->quantity }}</span></p>
                                             <p><span>Quantité Demandé:</span> <span>{{ $ligne->quantity_requested }}</span></p>
                                             <p><span>Quantité Fourni:</span> <span>{{ $ligne->quantity_accepted }}</span></p>

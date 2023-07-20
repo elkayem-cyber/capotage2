@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('phone_number');
             $table->string('email')->unique();
+            $table->text('address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -32,6 +33,7 @@ class CreateUsersTable extends Migration
             $table->text('bio')->nullable();
             $table->string('phone_number');
             $table->string('email')->unique();
+            $table->text('address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -97,6 +99,7 @@ class CreateUsersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->text('message');
             $table->string('file')->nullable();
+            $table->enum('sender', ['v', 'u']);
             $table->rememberToken();
             $table->timestamps();
         });

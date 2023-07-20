@@ -67,7 +67,7 @@
                                             <button class="wishlist-btn" type="submit"><i class=" fa fa-cart-plus"></i></button>
 
                                         </form>
-                                        <a href="#" class="compare-btn"><i class="fa fa-info"></i></a>
+                                        <a href="{{ route('user.show_produit',$product->id) }}" class="compare-btn"><i class="fa fa-info"></i></a>
                                     </div>
                                 </div>
                                 <!-- Product Info -->

@@ -25,14 +25,24 @@
                     <div class="author-widget">
                         <div class="author-thumb-name d-flex align-items-center">
                             <div class="author-thumb">
-                                <img src="{{ asset('assets/img/bg-img/29.jpg') }}" alt="">
+                                @if(auth::guard('vendor')->user()->avatar)
+                                <img src="{{ asset(auth::guard('vendor')->user()->avatar) }}" alt="img-profile">
+                                @else
+                                <img src="{{ asset('avatar_blanc.png') }}" alt="img-profile">
+                                @endif
+
                             </div>
                             <div class="author-name">
                                 <h5>{{ auth::guard('vendor')->user()->first_name }} &nbsp;{{ auth::guard('vendor')->user()->last_name }}</h5>
                                 <p>{{ auth::guard('vendor')->user()->email }}</p>
                             </div>
                         </div>
+                        @if(auth::guard('vendor')->user()->bio)
                         <p>{{ auth::guard('vendor')->user()->bio }}</p>
+                        @else
+<a href="{{ route('vendor.profile') }}">Ajouter une Bio et Modfier vos coordonnés</a>
+                        @endif
+
 
                     </div>
                 </div>

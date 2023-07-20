@@ -86,7 +86,15 @@
                                     @enderror
                                 </div>
                             </div>
-     
+                            <div class="col-12">
+                                <textarea name="address" id="" cols="30" rows="10" class="form-control @error('address') is-invalid @enderror" placeholder="Adresse..." style="resize: none"></textarea>
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
 
                             <div class="col-12">
                                 <button type="submit" class="btn alazea-btn mt-15">S'inscrire</button>

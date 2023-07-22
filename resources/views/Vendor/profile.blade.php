@@ -45,7 +45,7 @@
                                 @else
                                 <img src="{{ asset('avatar_blanc.png') }}" alt="img-profile">
                                 @endif
-                             
+
                             </div>
                             <div class="author-name">
                                 <h5>{{ auth::guard('vendor')->user()->first_name }} &nbsp;{{ auth::guard('vendor')->user()->last_name }}</h5>
@@ -201,6 +201,11 @@
                         <div class="row">
                             <div class="col-12">
                                 <a href="{{ route('vendor.commandes') }}">Commandes</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="{{ route('Vendor.mes_messages') }}">Messages</a>
                             </div>
                         </div>
                         <div class="row">

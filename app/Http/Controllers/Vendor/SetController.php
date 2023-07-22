@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Vendor;
 
+use App\Models\Chat;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -48,6 +49,23 @@ if ($request->pictures) {
 }
 $product->save();
 return redirect()->back()->with('success', 'Ajout Annonce  avec succès.');
+
+   }
+   public function send_message(Request $request, $id)
+   {
+       $request->validate([
+           'message' => 'required',
+
+       ], [
+           'message.required' => "Vous ne pouvez pas envoyer un message vide",
+       ]);
+       $chat=new Chat();
+       $chat->vendor_id=Auth::guard('vendor')->user()->id;
+       $chat->user_id=$id;
+       $chat->message=$request->message;
+       $chat->sender='v';
+       $chat->save();
+       return redirect()->back()->with('success', 'envoyé');
 
    }
 }

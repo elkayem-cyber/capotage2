@@ -30,8 +30,10 @@ Route::prefix('')->group(function () {
     Route::get('/panier', [App\Http\Controllers\User\GetController::class, 'paniers'])->name('user.paniers');
     Route::get('/mes-commandes', [App\Http\Controllers\User\GetController::class, 'mes_commandes'])->name('user.commandes')->middleware('auth:web');
     Route::get('/details-produit{id}', [App\Http\Controllers\User\GetController::class, 'show_produit'])->name('user.show_produit');
-    Route::get('/mes-messages', [App\Http\Controllers\User\GetController::class, 'mes_messages'])->name('user.mes_messages');
-    Route::get('/messages{id}', [App\Http\Controllers\User\GetController::class, 'messages_by_id'])->name('user.messages_by_id');
+    Route::get('/mes-messages', [App\Http\Controllers\User\GetController::class, 'mes_messages'])->name('user.mes_messages')->middleware('auth:web');
+    Route::get('/messages{id}', [App\Http\Controllers\User\GetController::class, 'messages_by_id'])->name('user.messages_by_id')->middleware('auth:web');
+    Route::post('/send-messages{id}', [App\Http\Controllers\User\SetController::class, 'send_message'])->name('user.send_message')->middleware('auth:web');
+    Route::post('/supprimer-messages{id}', [App\Http\Controllers\User\DeleteController::class, 'delte_message'])->name('user.delete_message')->middleware('auth:web');
 
     /* Panier Start */
     Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
@@ -61,7 +63,10 @@ Route::group(['prefix' => 'vendeur','middleware' => ['auth:vendor']], function (
     Route::post('/Modifier-Profile', [App\Http\Controllers\Vendor\UpdateController::class, 'update_profile'])->name('vendor.update.profile');
     Route::post('/Changer-Mot-passe', [App\Http\Controllers\Vendor\UpdateController::class, 'update_password'])->name('vendor.update.password');
 
-
+    Route::get('/mes-messages', [App\Http\Controllers\Vendor\GetController::class, 'mes_messages'])->name('Vendor.mes_messages');
+    Route::get('/messages{id}', [App\Http\Controllers\Vendor\GetController::class, 'messages_by_id'])->name('Vendor.messages_by_id');
+    Route::post('/send-messages{id}', [App\Http\Controllers\Vendor\SetController::class, 'send_message'])->name('Vendor.send_message');
+    Route::post('/supprimer-messages{id}', [App\Http\Controllers\Vendor\DeleteController::class, 'delte_message'])->name('Vendor.delete_message');
 });
 Route::get('Login_Vendeur', [LoginController::class, 'ShowloginVendor'])->name('vendor.login.show');
 Route::post('Login_Vendeur', [LoginController::class, 'loginVendor'])->name('vendor.login.submit');

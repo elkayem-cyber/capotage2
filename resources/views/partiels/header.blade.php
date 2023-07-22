@@ -64,7 +64,7 @@
                                 <li><a href="{{ route('user.index') }}">Accueil</a></li>
                                 <li><a href="{{ route('user.about') }}">À propos</a></li>
 
-                            
+
                                 <li><a href="{{ route('user.produits') }}">Produits</a></li>
                                 <li><a href="{{ route('user.contact') }}">Contact</a></li>
                                 @if(!Auth::guard('web')->user()&& !Auth::guard('vendor')->user())
@@ -80,9 +80,14 @@
                                 @if(Auth::guard('web')->user())
                                 <li class="has-down"><a href="#">{{ Auth::guard('web')->user()->first_name }}</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ route('login') }}">Mon Profile</a></li>
-                                        <li><a href="{{ route('vendor.login.show') }}">Déconnexion</a></li>
-
+                                        <li><a href="{{ route('home') }}">Mon Profile</a></li>
+                                        <li><a href="{{ route('login') }}">Mes Commandes</a></li>
+                                        <li><a href="{{ route('user.mes_messages') }}">Messages</a></li>
+                                        <li><a onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">Déconnexion</a></li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
                                     </ul>
                                     <span class="dd-trigger"></span>
                                 </li>
@@ -96,6 +101,7 @@
                                         <li><a href="{{ route('vendor.profile') }}">Mon Profile</a></li>
                                         <li><a href="{{ route('venor.ancienne_ventes') }}">Vente</a></li>
                                         <li><a href="{{ route('vendor.commandes') }}">Achats</a></li>
+                                        <li><a href="{{ route('Vendor.mes_messages') }}">Mes Messages</a></li>
                                         <li><a onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">Déconnexion</a></li>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

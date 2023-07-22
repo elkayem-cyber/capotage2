@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Models\Chat;
+use App\Models\Vendor;
 use App\Models\Product;
+use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class GetController extends Controller
 {
@@ -56,10 +60,24 @@ where('quantity', '>', 0)->
     }
     public function mes_messages()
     {
-        return view('User.mes_messages');
+        $user=Auth::guard('web')->user();
+        $vendors=$user->vendors()->
+        orderBy('id','asc')
+        ->distinct()
+        ->paginate(4);
+        return view('User.mes_messages',compact('vendors'));
     }
     public function messages_by_id($id)
     {
-        return view('User.messages_by_id');
+        $vendor=Vendor::find($id);
+        if ($vendor) {
+            $chats=Chat::where('user_id',Auth::guard('web')->user()->id)
+        ->where('vendor_id',$id)
+        ->orderBy('id','desc')
+        ->paginate(4);
+        return view('User.messages_by_id',compact('chats','id'));
+        }else{
+            return redirect()->route('user.index');
+        }
     }
 }

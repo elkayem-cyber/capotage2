@@ -100,7 +100,7 @@ class CreateUsersTable extends Migration
             $table->text('message');
             $table->string('file')->nullable();
             $table->enum('sender', ['v', 'u']);
-            $table->rememberToken();
+         
             $table->timestamps();
         });
     }

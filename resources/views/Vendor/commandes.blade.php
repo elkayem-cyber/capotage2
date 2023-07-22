@@ -92,6 +92,11 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
+                                <a href="{{ route('Vendor.mes_messages') }}">Messages</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">Déconnexion</a>
                             </div>

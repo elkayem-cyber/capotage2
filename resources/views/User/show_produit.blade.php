@@ -28,7 +28,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-            @endif
+                @endif
             </div>
             <section class="single_product_details_area mb-50">
                 <div class="produts-details--content mb-50">

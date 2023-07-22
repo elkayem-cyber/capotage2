@@ -29,39 +29,35 @@
                 </div>
                 @endif
             </div>
-            <div class="col-12 mb-15">
-                <form action="{{ route('user.send_message',$id) }}" class="convertation" method="post">
-                    @csrf
-                    <textarea name="message" id="" cols="30" rows="2" class=" form-control shaow" placeholder="ecrire votre message ...."></textarea>
-                    <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                </form>
-            </div>
             <div class="col-12">
+                <div class="col-12 mb-15">
+                    <form action="{{ route('Vendor.send_message',$id) }}" class="convertation" method="post">
+                        @csrf
+                        <textarea name="message" id="" cols="30" rows="2" class=" form-control shaow" placeholder="ecrire votre message ...."></textarea>
+                        <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </form>
+                </div>
 
 
                 <div class="comment_area clearfix">
 
                     @foreach ($chats as $chat)
-                    @if($chat->sender=='v')
+                    @if($chat->sender=='u')
                     <ol class="children">
                         <li class="single_comment_area">
 
                             <div class="comment-wrapper d-flex">
                                 <!-- Comment Meta -->
                                 <div class="comment-author">
-                                    @if($chat->vendor->avatar)
-                                    <img src="{{ asset($chat->vendor->avatar) }}" alt="">
-                                    @else
-                                    <img src="{{ asset('avatar_blanc.png') }}" alt="">
 
-                                    @endif
-
+                                    <span class="comment-date">{{ $chat->created_at }}</span>
                                 </div>
                                 <!-- Comment Content -->
                                 <div class="comment-content">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <h5>{{ $chat->vendor->first_name }} &nbsp;{{ $chat->vendor->last_name }}</h5>
-                                        <span class="comment-date">{{ $chat->created_at }}</span>
+                                    <div class=" ">
+                                        <h5>{{ $chat->user->first_name }} &nbsp;{{ $chat->user->last_name }}</h5>
+
+
                                     </div>
                                     <p>{{ $chat->message }}</p>
 
@@ -81,25 +77,28 @@
                                 <p>{{ $chat->message }}</p>
 
 
-                            <div class="d-flex justify-content-end">
-                                envoyé le:{{ $chat->created_at }}
-                                <form action="{{ route('user.delete_message',$chat->id) }}" method="post">
-                                    @csrf
-                                    <button type="submit" title="supprimer" class="btn btn-sm"><i class="fa fa-trash"></i></button>
-                                </form>
+                                <div class="d-flex justify-content-end">
+                                    envoyé le:{{ $chat->created_at }}
+                                    <form action="{{ route('Vendor.delete_message',$chat->id) }}" method="post">
+                                        @csrf
+                                        <button type="submit" title="supprimer" class="btn btn-sm"><i class="fa fa-trash"></i></button>
+                                    </form>
+                                </div>
+
+
+
+
+
                             </div>
+                        </li>
+                    </ol>
+                    @endif
 
-
+                    @endforeach
 
 
 
                 </div>
-                </li>
-                </ol>
-                @endif
-
-                @endforeach
-
                 <div class="row justify-content-between">
                     @if(isset($chats))
                     @if($chats->currentPage() > 1)
@@ -116,11 +115,9 @@
 
             </div>
 
+
         </div>
-
-
     </div>
-</div>
 </div>
 
 <style>

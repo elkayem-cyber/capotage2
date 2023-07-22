@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Vendor;
 
+use App\Models\Chat;
+use App\Models\User;
 use App\Models\OLigne;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -52,6 +54,28 @@ class GetController extends Controller
             return view('Vendor.Consulter_produit', compact('product'));
         } else {
             return redirect()->back();
+        }
+    }
+    public function mes_messages()
+    {
+        $vendor=Auth::guard('vendor')->user();
+        $users=$vendor->users()->
+        orderBy('id','asc')
+        ->distinct()
+        ->paginate(4);
+        return view('Vendor.mes_messages',compact('users'));
+    }
+    public function messages_by_id($id)
+    {
+        $user=User::find($id);
+        if ($user) {
+            $chats=Chat::where('vendor_id',Auth::guard('vendor')->user()->id)
+        ->where('user_id',$id)
+        ->orderBy('id','desc')
+        ->paginate(4);
+        return view('Vendor.messages_by_id',compact('chats','id'));
+        }else{
+            return redirect()->route('vendor.index');
         }
     }
 }

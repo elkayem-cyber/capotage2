@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Models\Chat;
+use App\Models\Order;
 use App\Models\Vendor;
 use App\Models\Product;
 use Darryldecode\Cart\Cart;
@@ -52,7 +53,10 @@ where('quantity', '>', 0)->
     }
     public function mes_commandes()
     {
-        return view('User.mes_commandes');
+        $orders=Order::where('user_id',Auth::guard('web')->user()->id)
+        ->orderBy('id','desc')
+        ->paginate('6');
+        return view('User.mes_commandes',compact('orders'));
     }
     public function maps()
     {
@@ -79,5 +83,13 @@ where('quantity', '>', 0)->
         }else{
             return redirect()->route('user.index');
         }
+    }
+    public function commande_by_id($id)
+    {
+        $order=Order::find($id);
+$lignes=$order->olignes()->orderBy('id','desc')->paginate(6);
+
+return view('User.commande_by_id',compact('lignes'));
+
     }
 }

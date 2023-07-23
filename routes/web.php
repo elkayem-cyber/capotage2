@@ -29,11 +29,14 @@ Route::prefix('')->group(function () {
     Route::get('/produits', [App\Http\Controllers\User\GetController::class, 'produits'])->name('user.produits');
     Route::get('/panier', [App\Http\Controllers\User\GetController::class, 'paniers'])->name('user.paniers');
     Route::get('/mes-commandes', [App\Http\Controllers\User\GetController::class, 'mes_commandes'])->name('user.commandes')->middleware('auth:web');
+    Route::get('/commande{id}', [App\Http\Controllers\User\GetController::class, 'commande_by_id'])->name('user.commande_by_id')->middleware('auth:web');
     Route::get('/details-produit{id}', [App\Http\Controllers\User\GetController::class, 'show_produit'])->name('user.show_produit');
     Route::get('/mes-messages', [App\Http\Controllers\User\GetController::class, 'mes_messages'])->name('user.mes_messages')->middleware('auth:web');
     Route::get('/messages{id}', [App\Http\Controllers\User\GetController::class, 'messages_by_id'])->name('user.messages_by_id')->middleware('auth:web');
     Route::post('/send-messages{id}', [App\Http\Controllers\User\SetController::class, 'send_message'])->name('user.send_message')->middleware('auth:web');
     Route::post('/supprimer-messages{id}', [App\Http\Controllers\User\DeleteController::class, 'delte_message'])->name('user.delete_message')->middleware('auth:web');
+    Route::post('/supprimer-produits{id}', [App\Http\Controllers\User\DeleteController::class, 'delete_ligne'])->name('user.delete_ligne')->middleware('auth:web');
+    Route::post('/supprimer-Commandes{id}', [App\Http\Controllers\User\DeleteController::class, 'delete_cmd'])->name('user.delete_cmd')->middleware('auth:web');
 
     /* Panier Start */
     Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');

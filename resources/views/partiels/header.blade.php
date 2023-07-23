@@ -81,7 +81,7 @@
                                 <li class="has-down"><a href="#">{{ Auth::guard('web')->user()->first_name }}</a>
                                     <ul class="dropdown">
                                         <li><a href="{{ route('home') }}">Mon Profile</a></li>
-                                        <li><a href="{{ route('login') }}">Mes Commandes</a></li>
+                                        <li><a href="{{ route('user.commandes') }}">Mes Commandes</a></li>
                                         <li><a href="{{ route('user.mes_messages') }}">Messages</a></li>
                                         <li><a onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">Déconnexion</a></li>

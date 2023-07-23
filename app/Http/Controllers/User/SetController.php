@@ -16,7 +16,7 @@ class SetController extends Controller
     {
         $order=new Order([
             "user_id"=>1,
-            'date'=>'2023-03-09',
+            'date'=>date('Y-m-d'),
         ]);
         $order->save();
         $orders_lignes=[];
@@ -24,6 +24,7 @@ class SetController extends Controller
         foreach ($panier as $p) {
             $orders_lignes[]= new OLigne([
                 "product_id"=>$p->id,
+                "price"=>$p->price,
                 "quantity_requested"=>$p->quantity,
            ]);
         }

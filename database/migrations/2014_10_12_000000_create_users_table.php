@@ -39,6 +39,22 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        Schema::create('vendors', function (Blueprint $table) {
+            $table->id();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('lat')->nullable();
+            $table->string('lng')->nullable();
+            $table->string('avatar')->nullable();
+            $table->text('bio')->nullable();
+            $table->string('phone_number');
+            $table->string('email')->unique();
+            $table->text('address')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
+        });
 
         Schema::create('products', function (Blueprint $table) {
             $table->id();
@@ -84,6 +100,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->decimal('price', 12, 3);
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->string('quantity_requested');
@@ -100,7 +117,6 @@ class CreateUsersTable extends Migration
             $table->text('message');
             $table->string('file')->nullable();
             $table->enum('sender', ['v', 'u']);
-         
             $table->timestamps();
         });
     }

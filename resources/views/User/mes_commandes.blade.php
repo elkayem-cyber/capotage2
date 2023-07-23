@@ -33,7 +33,58 @@
             </div>
 
         </div>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>REF</th>
+                                <th>
+                                    Date
+                                </th>
+                                <th>Produits</th>
+                                <th>
 
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($orders as $order)
+                            <tr>
+                                <td>
+                                    CM {{ $order->id }}
+                                </td>
+                                <td>
+                                    {{ $order->date }}
+                                </td>
+                                <td>
+                                    {{ $order->olignes->count() }}
+
+                                </td>
+                                <td>
+                                    @if($order->olignes->count()>0)
+                                    <a href="{{ route('user.commande_by_id',$order->id) }}"> <i class="fa fa-eye"></i></a>
+                                    @else
+                                    <form action="{{ route('user.delete_cmd',$order->id) }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
+                                    @endif
+
+                                </td>
+
+                            </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>

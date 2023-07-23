@@ -13,7 +13,7 @@ class OLigne extends Model
     use HasFactory;
     protected $table="olignes";
     protected $fillable = [
-        'order_id','product_id','quantity_requested','quantity_accepted'
+        'order_id','product_id','quantity_requested','quantity_accepted','price'
     ];
    /**
     * Get the user that owns the OLigne

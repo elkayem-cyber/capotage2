@@ -87,9 +87,15 @@ where('quantity', '>', 0)->
     public function commande_by_id($id)
     {
         $order=Order::find($id);
-$lignes=$order->olignes()->orderBy('id','desc')->paginate(6);
+        if ($order) {
+            $lignes=$order->olignes()->orderBy('id','desc')->paginate(6);
 
-return view('User.commande_by_id',compact('lignes'));
+            return view('User.commande_by_id',compact('lignes'));
+        }
+        else {
+            return redirect()->route('user.commandes');
+        }
+
 
     }
 }

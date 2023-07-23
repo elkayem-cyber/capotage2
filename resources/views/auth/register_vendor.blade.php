@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="contact-form-area mb-100">
                     <form action="{{ route('vendor.regsiter.submit') }}" method="post">
                         @csrf
@@ -27,7 +27,7 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('first_name') is-invalid @enderror" id="contact-subject" placeholder="Prénom" name="first_name">
+                                    <input type="text" class="form-control @error('first_name') is-invalid @enderror" id="" placeholder="Prénom" name="first_name">
                                     @error('first_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="contact-subject" placeholder="Nom" name="last_name">
+                                    <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="" placeholder="Nom" name="last_name">
                                     @error('last_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -48,7 +48,7 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('phone_number') is-invalid @enderror" id="contact-subject" placeholder="Téléphone" name="phone_number">
+                                    <input type="text" class="form-control @error('phone_number') is-invalid @enderror" id="" placeholder="Téléphone" name="phone_number">
                                     @error('phone_number')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="contact-subject" placeholder="Email" name="email">
+                                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="" placeholder="Email" name="email">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -68,7 +68,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="contact-subject" placeholder="Mot de passe" name="password">
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="" placeholder="Mot de passe" name="password">
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -78,7 +78,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="contact-subject" placeholder="Confirmer Mot de passe" name="password_confirmation">
+                                    <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="" placeholder="Confirmer Mot de passe" name="password_confirmation">
                                     @error('password_confirmation')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -86,7 +86,9 @@
                                     @enderror
                                 </div>
                             </div>
-                        
+                        <div class="col-12">
+                            <div id="map" style="height: 450px;"></div>
+                        </div>
 
                             <div class="col-12">
                                 <button type="submit" class="btn alazea-btn mt-15">S'inscrire</button>
@@ -103,7 +105,39 @@
         </div>
     </div>
 </div>
+<!-- Your existing HTML code -->
 
+<!-- Your existing HTML code -->
+
+<script>
+    function initMap() {
+        const parisLatLng = { lat: 48.8566, lng: 2.3522 }; // Coordinates for Paris
+
+        const map = new google.maps.Map(document.getElementById('map'), {
+            center: parisLatLng, // Set the map center to Paris
+            zoom: 15,
+        });
+
+        const marker = new google.maps.Marker({
+            map: map,
+            position: parisLatLng, // Set the marker position to Paris
+            draggable: true,
+        });
+
+        google.maps.event.addListener(marker, 'dragend', function (event) {
+            const latLng = event.latLng;
+            const latitudeInput = document.getElementById('latitude');
+            const longitudeInput = document.getElementById('longitude');
+
+            latitudeInput.value = latLng.lat();
+            longitudeInput.value = latLng.lng();
+        });
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5YFut7D0a2WFn7L6-PCmjEP92m4yoMMM&callback=initMap&libraries=places" async defer></script>
+{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5YFut7D0a2WFn7L6-PCmjEP92m4yoMMM&libraries=places"></script>
+ --}}
 @endsection
 
 

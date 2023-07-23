@@ -47,7 +47,7 @@
                         <div class="single-product-area mb-50">
                             <!-- Product Image -->
                             <div class="product-img">
-                                <a href="shop-details.html"><img src="{{ asset($product->pictures) }}" alt=""></a>
+                                <a href=""><img src="{{ asset($product->pictures) }}" alt=""></a>
                                 <!-- Product Tag -->
                                 <div class="product-tag">
                                     <a href="#">
@@ -81,7 +81,7 @@
                             </div>
                             <!-- Product Info -->
                             <div class="product-info mt-15 text-center">
-                                <a href="shop-details.html">
+                                <a href="">
                                     <p>{{ $product->name }}</p>
                                 </a>
                                 <h6>{{ $product->price }} EUR</h6>

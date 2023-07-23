@@ -84,7 +84,7 @@
                                         <li><a href="{{ route('user.commandes') }}">Mes Commandes</a></li>
                                         <li><a href="{{ route('user.mes_messages') }}">Messages</a></li>
                                         <li><a onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">Déconnexion</a></li>
+                                            document.getElementById('logout-form').submit();"  style="cursor: pointer;">Déconnexion</a></li>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
@@ -103,7 +103,7 @@
                                         <li><a href="{{ route('vendor.commandes') }}">Achats</a></li>
                                         <li><a href="{{ route('Vendor.mes_messages') }}">Mes Messages</a></li>
                                         <li><a onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">Déconnexion</a></li>
+                                            document.getElementById('logout-form').submit();" style="cursor: pointer;">Déconnexion</a></li>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>

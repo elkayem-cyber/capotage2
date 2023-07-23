@@ -311,7 +311,7 @@
         >
           <!-- Product Image -->
           <div class="product-img">
-            <a href="shop-details.html"
+            <a href="#"
               ><img src="{{ asset('assets/img/bg-img/9.jpg') }}" alt=""
             /></a>
             <!-- Product Tag -->
@@ -322,7 +322,7 @@
               <a href="#" class="wishlist-btn"
                 ><i class="icon_heart_alt"></i
               ></a>
-              <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+              <a href="" class="add-to-cart-btn">Add to cart</a>
               <a href="#" class="compare-btn"
                 ><i class="arrow_left-right_alt"></i
               ></a>
@@ -330,7 +330,7 @@
           </div>
           <!-- Product Info -->
           <div class="product-info mt-15 text-center">
-            <a href="shop-details.html">
+            <a href="">
               <p>Cactus Flower</p>
             </a>
             <h6>$10.99</h6>
@@ -344,7 +344,7 @@
         >
           <!-- Product Image -->
           <div class="product-img">
-            <a href="shop-details.html"
+            <a href=""
               ><img src="{{ asset('assets/img/bg-img/9.jpg') }}" alt=""
             /></a>
             <!-- Product Tag -->
@@ -355,7 +355,7 @@
               <a href="#" class="wishlist-btn"
                 ><i class="icon_heart_alt"></i
               ></a>
-              <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+              <a href="" class="add-to-cart-btn">Add to cart</a>
               <a href="#" class="compare-btn"
                 ><i class="arrow_left-right_alt"></i
               ></a>
@@ -363,7 +363,7 @@
           </div>
           <!-- Product Info -->
           <div class="product-info mt-15 text-center">
-            <a href="shop-details.html">
+            <a href="">
               <p>Cactus Flower</p>
             </a>
             <h6>$10.99</h6>
@@ -377,7 +377,7 @@
         >
           <!-- Product Image -->
           <div class="product-img">
-            <a href="shop-details.html"
+            <a href=""
               ><img src="{{ asset('assets/img/bg-img/9.jpg') }}" alt=""
             /></a>
             <!-- Product Tag -->
@@ -388,7 +388,7 @@
               <a href="#" class="wishlist-btn"
                 ><i class="icon_heart_alt"></i
               ></a>
-              <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+              <a href="" class="add-to-cart-btn">Add to cart</a>
               <a href="#" class="compare-btn"
                 ><i class="arrow_left-right_alt"></i
               ></a>
@@ -396,7 +396,7 @@
           </div>
           <!-- Product Info -->
           <div class="product-info mt-15 text-center">
-            <a href="shop-details.html">
+            <a href="">
               <p>Cactus Flower</p>
             </a>
             <h6>$10.99</h6>
@@ -410,7 +410,7 @@
         >
           <!-- Product Image -->
           <div class="product-img">
-            <a href="shop-details.html"
+            <a href=""
               ><img src="{{ asset('assets/img/bg-img/9.jpg') }}" alt=""
             /></a>
             <!-- Product Tag -->
@@ -421,7 +421,7 @@
               <a href="#" class="wishlist-btn"
                 ><i class="icon_heart_alt"></i
               ></a>
-              <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+              <a href="" class="add-to-cart-btn">Add to cart</a>
               <a href="#" class="compare-btn"
                 ><i class="arrow_left-right_alt"></i
               ></a>
@@ -429,7 +429,7 @@
           </div>
           <!-- Product Info -->
           <div class="product-info mt-15 text-center">
-            <a href="shop-details.html">
+            <a href="">
               <p>Cactus Flower</p>
             </a>
             <h6>$10.99</h6>
@@ -445,14 +445,14 @@
         >
           <!-- Product Image -->
           <div class="product-img">
-            <a href="shop-details.html"
+            <a href=""
               ><img src="{{ asset('assets/img/bg-img/10.jpg') }}" alt=""
             /></a>
             <div class="product-meta d-flex">
               <a href="#" class="wishlist-btn"
                 ><i class="icon_heart_alt"></i
               ></a>
-              <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+              <a href="" class="add-to-cart-btn">Add to cart</a>
               <a href="#" class="compare-btn"
                 ><i class="arrow_left-right_alt"></i
               ></a>
@@ -460,7 +460,7 @@
           </div>
           <!-- Product Info -->
           <div class="product-info mt-15 text-center">
-            <a href="shop-details.html">
+            <a href="">
               <p>Cactus Flower</p>
             </a>
             <h6>$10.99</h6>
@@ -476,14 +476,14 @@
         >
           <!-- Product Image -->
           <div class="product-img">
-            <a href="shop-details.html"
+            <a href=""
               ><img src="{{ asset('assets/img/bg-img/11.jpg') }}" alt=""
             /></a>
             <div class="product-meta d-flex">
               <a href="#" class="wishlist-btn"
                 ><i class="icon_heart_alt"></i
               ></a>
-              <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+              <a href="" class="add-to-cart-btn">Add to cart</a>
               <a href="#" class="compare-btn"
                 ><i class="arrow_left-right_alt"></i
               ></a>
@@ -491,7 +491,7 @@
           </div>
           <!-- Product Info -->
           <div class="product-info mt-15 text-center">
-            <a href="shop-details.html">
+            <a href="">
               <p>Cactus Flower</p>
             </a>
             <h6>$10.99</h6>
@@ -507,7 +507,7 @@
         >
           <!-- Product Image -->
           <div class="product-img">
-            <a href="shop-details.html"
+            <a href=""
               ><img src="{{ asset('assets/img/bg-img/12.jpg') }}" alt=""
             /></a>
             <!-- Product Tag -->
@@ -518,7 +518,7 @@
               <a href="#" class="wishlist-btn"
                 ><i class="icon_heart_alt"></i
               ></a>
-              <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+              <a href="" class="add-to-cart-btn">Add to cart</a>
               <a href="#" class="compare-btn"
                 ><i class="arrow_left-right_alt"></i
               ></a>
@@ -526,7 +526,7 @@
           </div>
           <!-- Product Info -->
           <div class="product-info mt-15 text-center">
-            <a href="shop-details.html">
+            <a href="">
               <p>Cactus Flower</p>
             </a>
             <h6>$10.99</h6>
@@ -540,7 +540,7 @@
         >
           <!-- Product Image -->
           <div class="product-img">
-            <a href="shop-details.html"
+            <a href=""
               ><img src="{{ asset('assets/img/bg-img/12.jpg') }}" alt=""
             /></a>
             <!-- Product Tag -->
@@ -551,7 +551,7 @@
               <a href="#" class="wishlist-btn"
                 ><i class="icon_heart_alt"></i
               ></a>
-              <a href="cart.html" class="add-to-cart-btn">Add to cart</a>
+              <a href="" class="add-to-cart-btn">Add to cart</a>
               <a href="#" class="compare-btn"
                 ><i class="arrow_left-right_alt"></i
               ></a>
@@ -559,7 +559,7 @@
           </div>
           <!-- Product Info -->
           <div class="product-info mt-15 text-center">
-            <a href="shop-details.html">
+            <a href="">
               <p>Cactus Flower</p>
             </a>
             <h6>$10.99</h6>

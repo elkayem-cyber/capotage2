@@ -45,6 +45,9 @@ Route::prefix('')->group(function () {
     Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
     Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
+    Route::post('/Modifier-Profile', [App\Http\Controllers\User\UpdateController::class, 'update_profile'])->name('user.update.profile');
+    Route::post('/Changer-Mot-passe', [App\Http\Controllers\User\UpdateController::class, 'update_password'])->name('user.update.password');
+
 
     /* Panier End */
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

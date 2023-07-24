@@ -25,13 +25,13 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-     
+
         Schema::create('vendors', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('lat')->nullable();
-            $table->string('lng')->nullable();
+            $table->double('lat', 10, 7)->default(0); // Example data type 'double' with 10 digits and 7 decimal places
+            $table->double('lng', 10, 7)->default(0); 
             $table->string('avatar')->nullable();
             $table->text('bio')->nullable();
             $table->string('phone_number');
@@ -57,25 +57,7 @@ class CreateUsersTable extends Migration
             $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade');
             $table->timestamps();
         });
-    /*     Schema::create('pictures', function (Blueprint $table) {
-            $table->id();
-            $table->string('path')->nullable();
-            $table->string('description')->nullable();
-            $table->unsignedBigInteger('product_id')->nullable();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->timestamps();
-        }); */
-       /*  Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->date('date');
-            $table->float('quantity');
-            $table->unsignedBigInteger('product_id')->nullable();
-          $table->boolean('confirmed')->nullable()->default(false);
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
-        }); */
+
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
@@ -106,6 +88,14 @@ class CreateUsersTable extends Migration
             $table->enum('sender', ['v', 'u']);
             $table->timestamps();
         });
+        Schema::create('contacts', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->text('subject')->nullable();
+            $table->text('message');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -116,6 +106,7 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('contacts');
         Schema::dropIfExists('vendors');
         Schema::dropIfExists('products');
         Schema::dropIfExists('chats');

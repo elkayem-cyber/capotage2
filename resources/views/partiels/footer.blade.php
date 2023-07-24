@@ -50,28 +50,21 @@
                         <div class="widget-title">
                             <h5>MEILLEURE VENTE</h5>
                         </div>
-
-                        <!-- Single Best Seller Products -->
+                        @foreach (App\Models\Product::withCount('olignes as total_quantity_accepted')
+                        ->orderByDesc('total_quantity_accepted')
+                        ->limit(2)
+                        ->get() as $product)
                         <div class="single-best-seller-product d-flex align-items-center">
                             <div class="product-thumbnail">
-                                <a href="shop-details.html"><img src="{{ asset('assets/img/bg-img/4.jpg') }}" alt=""></a>
+                                <a href="{{ route('user.show_produit',$product->id) }}"><img src="{{ asset($product->pictures) }}" alt=""></a>
                             </div>
                             <div class="product-info">
-                                <a href="shop-details.html">Fleur de Cactus</a>
-                                <p>10,99€</p>
+                                <a href="{{ route('user.show_produit',$product->id) }}">{{ $product->name }}</a>
+                                <p>{{ $product->price }} EUR</p>
                             </div>
                         </div>
+                        @endforeach
 
-                        <!-- Single Best Seller Products -->
-                        <div class="single-best-seller-product d-flex align-items-center">
-                            <div class="product-thumbnail">
-                                <a href="shop-details.html"><img src="{{ asset('assets/img/bg-img/5.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="product-info">
-                                <a href="shop-details.html">Fleur de Tulipe</a>
-                            <p>11,99€</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -83,9 +76,10 @@
                         </div>
 
                         <div class="contact-information">
-                            <p><span>Adresse:</span> 505 Silk Rd, New York</p>
+                            <p><span>Adresse:</span> 10 Avenue des Champs-Élysées, 75008 Paris, France
+                            </p>
                             <p><span>Téléphone:</span> +1 234 122 122</p>
-                            <p><span>Email:</span> info.deercreative@gmail.com</p>
+                            <p><span>Email:</span> Capotage@gmail.com</p>
                             <p><span>Horaires d'ouverture:</span> Lun - Dim: de 8h à 21h</p>
                             <p><span>Heures de bonheur:</span> Sam: de 14h à 16h</p>
                         </div>
@@ -110,7 +104,7 @@
                             <script>
                                 document.write(new Date().getFullYear());
 
-                            </script> Tous les droits sont réservés |  developé avec <i class="fa fa-heart-o" aria-hidden="true"></i> par <a href="{{ route('user.index') }}" target="_blank">Capotage</a>
+                            </script> Tous les droits sont réservés | developé avec <i class="fa fa-heart-o" aria-hidden="true"></i> par <a href="{{ route('user.index') }}" target="_blank">Capotage</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
@@ -122,7 +116,7 @@
                             <ul>
                                 <li><a href="{{ route('user.index') }}">Accueil</a></li>
                                 <li><a href="{{ route('user.about') }}">À propos</a></li>
-                                
+
                                 <li><a href="{{ route('user.produits') }}">Produits</a></li>
                                 <li><a href="{{ route('user.contact') }}">Contact</a></li>
 

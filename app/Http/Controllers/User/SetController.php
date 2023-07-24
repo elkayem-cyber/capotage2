@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Models\Chat;
 use App\Models\Order;
 use App\Models\OLigne;
+use App\Models\Contact;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -47,6 +48,27 @@ class SetController extends Controller
         $chat->sender='u';
         $chat->save();
         return redirect()->back()->with('success', 'envoyé');
+
+    }
+    public function Sendcontact(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+
+        ], [
+            'name.required' => "Champ Obligatoire",
+            'email.required' => "Champ Obligatoire",
+            'email.required' => "Champ Obligatoire",
+            'message.required' => "Vous ne pouvez pas envoyer un message vide",
+        ]);
+        $contact=new Contact;
+        $contact->name =$request->name;
+        $contact->email =$request->email;
+        $contact->message =$request->message;
+        $contact->subject =$request->subject;
+        $contact->save();
+        return redirect()->back()->with('success', 'Message envoyé avec succès');
 
     }
 }

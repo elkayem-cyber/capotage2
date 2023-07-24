@@ -26,6 +26,7 @@ Route::prefix('')->group(function () {
     Route::get('/', [App\Http\Controllers\User\GetController::class, 'index'])->name('user.index');
     Route::get('/à-propos', [App\Http\Controllers\User\GetController::class, 'about'])->name('user.about');
     Route::get('/contact', [App\Http\Controllers\User\GetController::class, 'contact'])->name('user.contact');
+    Route::post('/Envoyer-Message', [App\Http\Controllers\User\SetController::class, 'Sendcontact'])->name('user.Sendcontact');
     Route::get('/produits', [App\Http\Controllers\User\GetController::class, 'produits'])->name('user.produits');
     Route::get('/panier', [App\Http\Controllers\User\GetController::class, 'paniers'])->name('user.paniers');
     Route::get('/mes-commandes', [App\Http\Controllers\User\GetController::class, 'mes_commandes'])->name('user.commandes')->middleware('auth:web');

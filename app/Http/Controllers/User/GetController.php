@@ -16,7 +16,17 @@ class GetController extends Controller
 {
     public function index()
     {
-        return view('User.index');
+         $userLat = 48.8567; // Latitude de l'utilisateur (à remplacer par la latitude réelle obtenue via la géolocalisation)
+        $userLng = 2.3523; // Longitude de l'utilisateur (à remplacer par la longitude réelle obtenue via la géolocalisation)
+
+        $vendors = Vendor::select('*', DB::raw("(6371 * acos(cos(radians($userLat)) * cos(radians(lat)) * cos(radians(lng) - radians($userLng)) + sin(radians($userLat)) * sin(radians(lat)))) AS distance"))
+            ->orderBy('distance', 'asc')
+            ->take(10)
+            ->get();
+
+
+        return view('User.index',compact('vendors', 'userLat', 'userLng'));
+
     }
     public function contact()
     {

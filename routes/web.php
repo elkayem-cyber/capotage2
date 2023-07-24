@@ -68,6 +68,7 @@ Route::group(['prefix' => 'vendeur','middleware' => ['auth:vendor']], function (
     Route::post('/Changer-etat-produit{id}', [App\Http\Controllers\Vendor\UpdateController::class, 'update_state_product'])->name('vendor.update.status.product');
     Route::get('/Consulter-Produit{id}', [App\Http\Controllers\Vendor\GetController::class, 'show_product'])->name('vendor.show.product');
     Route::post('/Modifier-Produit{id}', [App\Http\Controllers\Vendor\UpdateController::class, 'update_product'])->name('vendor.update.product');
+    Route::post('/Supprimer-Produit{id}', [App\Http\Controllers\Vendor\DeleteController::class, 'delete_product'])->name('vendor.delete.product');
     Route::post('/Modifier-Profile', [App\Http\Controllers\Vendor\UpdateController::class, 'update_profile'])->name('vendor.update.profile');
     Route::post('/Changer-Mot-passe', [App\Http\Controllers\Vendor\UpdateController::class, 'update_password'])->name('vendor.update.password');
 
@@ -75,6 +76,7 @@ Route::group(['prefix' => 'vendeur','middleware' => ['auth:vendor']], function (
     Route::get('/messages{id}', [App\Http\Controllers\Vendor\GetController::class, 'messages_by_id'])->name('Vendor.messages_by_id');
     Route::post('/send-messages{id}', [App\Http\Controllers\Vendor\SetController::class, 'send_message'])->name('Vendor.send_message');
     Route::post('/supprimer-messages{id}', [App\Http\Controllers\Vendor\DeleteController::class, 'delte_message'])->name('Vendor.delete_message');
+
     Route::get('/ma-position', [App\Http\Controllers\Vendor\GetController::class, 'ma_position'])->name('Vendor.ma_position');
     Route::post('/ma-position', [App\Http\Controllers\Vendor\UpdateController::class, 'update_position'])->name('vendre.update.position');
 });

@@ -70,7 +70,7 @@
                                     @endif
 
                                     @else
-                                    <form action="" method="post">
+                                    <form action="{{ route('vendor.delete.product',$product->id) }}" method="post">
                                         @csrf
                                         <button type="submit"  class="wishlist-btn"><i class="fa fa-trash"></i></button>
                                     </form>

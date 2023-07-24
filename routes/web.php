@@ -32,6 +32,7 @@ Route::prefix('')->group(function () {
     Route::get('/commande{id}', [App\Http\Controllers\User\GetController::class, 'commande_by_id'])->name('user.commande_by_id')->middleware('auth:web');
     Route::get('/details-produit{id}', [App\Http\Controllers\User\GetController::class, 'show_produit'])->name('user.show_produit');
     Route::get('/mes-messages', [App\Http\Controllers\User\GetController::class, 'mes_messages'])->name('user.mes_messages')->middleware('auth:web');
+    Route::get('/details-vendeur{id}', [App\Http\Controllers\User\GetController::class, 'vendor_by_id'])->name('user.vendor_by_id')->middleware('auth:web');
     Route::get('/messages{id}', [App\Http\Controllers\User\GetController::class, 'messages_by_id'])->name('user.messages_by_id')->middleware('auth:web');
     Route::post('/send-messages{id}', [App\Http\Controllers\User\SetController::class, 'send_message'])->name('user.send_message')->middleware('auth:web');
     Route::post('/supprimer-messages{id}', [App\Http\Controllers\User\DeleteController::class, 'delte_message'])->name('user.delete_message')->middleware('auth:web');
@@ -73,6 +74,8 @@ Route::group(['prefix' => 'vendeur','middleware' => ['auth:vendor']], function (
     Route::get('/messages{id}', [App\Http\Controllers\Vendor\GetController::class, 'messages_by_id'])->name('Vendor.messages_by_id');
     Route::post('/send-messages{id}', [App\Http\Controllers\Vendor\SetController::class, 'send_message'])->name('Vendor.send_message');
     Route::post('/supprimer-messages{id}', [App\Http\Controllers\Vendor\DeleteController::class, 'delte_message'])->name('Vendor.delete_message');
+    Route::get('/ma-position', [App\Http\Controllers\Vendor\GetController::class, 'ma_position'])->name('Vendor.ma_position');
+    Route::post('/ma-position', [App\Http\Controllers\Vendor\UpdateController::class, 'update_position'])->name('vendre.update.position');
 });
 Route::get('Login_Vendeur', [LoginController::class, 'ShowloginVendor'])->name('vendor.login.show');
 Route::post('Login_Vendeur', [LoginController::class, 'loginVendor'])->name('vendor.login.submit');

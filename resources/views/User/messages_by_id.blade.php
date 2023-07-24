@@ -4,7 +4,7 @@
 
 <div class="breadcrumb-area">
     <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url({{ asset('assets/img/bg-img/24.jpg') }});">
-        <h2>Contact Vendeur</h2>
+        <h2>Contact Vendeur :{{ $vendor->first_name }}&nbsp; {{ $vendor->last_name }}</h2>
     </div>
 
     <div class="container">
@@ -13,7 +13,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('user.index') }}"><i class="fa fa-home"></i> Accueil</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Contact Vendeur</li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact Vendeur :{{ $vendor->first_name }}&nbsp; {{ $vendor->last_name }}</li>
                     </ol>
                 </nav>
             </div>
@@ -30,7 +30,7 @@
                 @endif
             </div>
             <div class="col-12 mb-15">
-                <form action="{{ route('user.send_message',$id) }}" class="convertation" method="post">
+                <form action="{{ route('user.send_message',$vendor->id) }}" class="convertation" method="post">
                     @csrf
                     <textarea name="message" id="" cols="30" rows="2" class=" form-control shaow" placeholder="ecrire votre message ...."></textarea>
                     <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>

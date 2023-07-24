@@ -40,8 +40,10 @@
                         @if(auth::guard('vendor')->user()->bio)
                         <p>{{ auth::guard('vendor')->user()->bio }}</p>
                         @else
-<a href="{{ route('vendor.profile') }}">Ajouter une Bio et Modfier vos coordonnés</a>
+                        <a href="{{ route('vendor.profile') }}">Ajouter une Bio et Modfier vos coordonnés</a>
                         @endif
+                        <br>
+                        <a href="{{ route('Vendor.ma_position') }}"><i class="fa fa-map-marker"></i> Mettez vos coordonnées sur la carte</a>
 
 
                     </div>
@@ -85,7 +87,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <a  href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">Déconnexion</a>
                             </div>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

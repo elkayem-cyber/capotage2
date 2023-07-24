@@ -38,7 +38,11 @@
             <!-- All Products Area -->
             <div class="col-12 ">
                 <div class="shop-products-area">
+                    @if($products->count()>0)
+
+
                     <div class="row">
+
                         @foreach ($products as $product)
 
 
@@ -84,8 +88,12 @@
 
                     </div>
                     <div class="row justify-content-center mt-1 mb-3">
-                        {{ $products->links('pagination::bootstrap-4') }}
+                        {{ $products->appends(['search' => request('search')])->links('pagination::bootstrap-4') }}
+
                     </div>
+                    @else
+<h6 class="text-center text-danger">Aucun Produit Disponible</h6>
+                    @endif
                     <!-- Pagination -->
 
                 </div>

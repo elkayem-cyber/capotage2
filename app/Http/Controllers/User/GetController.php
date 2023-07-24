@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\DB;
 class GetController extends Controller
 {
     public function index()
@@ -26,13 +27,23 @@ class GetController extends Controller
         return view('User.about');
     }
 
-    public function produits()
+    public function produits(Request $request)
     {
-        $products=Product::where('is_actif', true)->
-where('quantity', '>', 0)->
-        OrderBy('id', 'desc')->paginate(3);
+        $searchQuery = $request->input('search');
+
+        $query = Product::where('is_actif', true)
+            ->where('quantity', '>', 0);
+
+        // Check if a search query is provided
+        if ($searchQuery) {
+            $query->where('name', 'like', '%' . $searchQuery . '%');
+        }
+
+        $products = $query->orderBy('id', 'desc')->paginate(9);
+
         return view('User.produits', compact('products'));
     }
+
     public function show_produit($id)
     {
         $product=Product::where('is_actif', true)->
@@ -60,7 +71,15 @@ where('quantity', '>', 0)->
     }
     public function maps()
     {
-        return view('User.maps');
+        $userLat = 48.8567; // Latitude de l'utilisateur (à remplacer par la latitude réelle obtenue via la géolocalisation)
+        $userLng = 2.3523; // Longitude de l'utilisateur (à remplacer par la longitude réelle obtenue via la géolocalisation)
+
+        $vendors = Vendor::select('*', DB::raw("(6371 * acos(cos(radians($userLat)) * cos(radians(lat)) * cos(radians(lng) - radians($userLng)) + sin(radians($userLat)) * sin(radians(lat)))) AS distance"))
+            ->orderBy('distance', 'asc')
+            ->get();
+
+
+        return view('User.maps',compact('vendors', 'userLat', 'userLng'));
     }
     public function mes_messages()
     {
@@ -79,7 +98,7 @@ where('quantity', '>', 0)->
         ->where('vendor_id',$id)
         ->orderBy('id','desc')
         ->paginate(4);
-        return view('User.messages_by_id',compact('chats','id'));
+        return view('User.messages_by_id',compact('chats','vendor'));
         }else{
             return redirect()->route('user.index');
         }
@@ -97,5 +116,20 @@ where('quantity', '>', 0)->
         }
 
 
+    }
+    public function vendor_by_id($id){
+
+        $vendor=Vendor::find($id);
+        if ($vendor) {
+            $products=Product::where('is_actif', true)->
+            where('quantity', '>', 0)->
+                    OrderBy('id', 'desc')
+                    ->where('vendor_id',$vendor->id)
+                    ->paginate(4);
+            return view('User.details_vendor',compact('vendor','products'));
+        }
+        else{
+            return redirect()->back();
+        }
     }
 }

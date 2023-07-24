@@ -129,12 +129,18 @@
 
                 <!-- Search Form -->
                 <div class="search-form">
-                    <form action="#" method="get">
-                        <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
-                        <button type="submit" class="d-none"></button>
+                    <form action="{{ route('user.produits') }}" method="get">
+                        @csrf
+                        <div class="d-flex">
+                        <input type="search" name="search" id="search" placeholder="Enter un nom de produit...">
+                        <button type="submit" class="btn btn-sm btn-light">
+                            <i class="fa fa-check"></i>
+                        </button>
+                    </div>
+                    <a class="mt-3" href="{{ route('maps') }}"><i class="fa fa-map-marker"></i>Voir les Vendeurs sur la Carte Maps</a>
                     </form>
+
                     <!-- Close Icon -->
-                    <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
                 </div>
             </div>
         </div>

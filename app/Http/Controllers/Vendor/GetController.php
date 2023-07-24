@@ -78,4 +78,8 @@ class GetController extends Controller
             return redirect()->route('vendor.index');
         }
     }
+
+    public function ma_position(){
+        return view('Vendor.position_vendor');
+    }
 }

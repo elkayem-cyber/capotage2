@@ -12,7 +12,7 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('user.index') }}"><i class="fa fa-home"></i> Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('vendor.index') }}"><i class="fa fa-home"></i> Accueil</a></li>
                         <li class="breadcrumb-item"><a href="{{ route('vendor.index') }}"> Espace Vendeur</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Mon Profile</li>
                     </ol>
@@ -29,7 +29,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-            @endif
+                @endif
             </div>
 
         </div>
@@ -62,7 +62,7 @@
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control "  value="Crée le:{{ Auth::guard('vendor')->user()->created_at }}" readOnly>
+                                                    <input type="text" class="form-control " value="Crée le:{{ Auth::guard('vendor')->user()->created_at }}" readOnly>
 
                                                 </div>
                                             </div>
@@ -109,7 +109,7 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <input type="file" class="form-control @error('avatar') is-invalid @enderror"  name="avatar" >
+                                                    <input type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
                                                     @error('avatar')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -117,9 +117,9 @@
                                                     @enderror
                                                 </div>
                                             </div>
-<div class="col-12">
-    <textarea name="bio" id="" cols="30" rows="10" class="form-control" placeholder="Bio" style="resize: none">{{ Auth::guard('vendor')->user()->bio }}</textarea>
-</div>
+                                            <div class="col-12">
+                                                <textarea name="bio" id="" cols="30" rows="10" class="form-control" placeholder="Bio" style="resize: none">{{ Auth::guard('vendor')->user()->bio }}</textarea>
+                                            </div>
 
                                             <div class="col-12">
                                                 <button type="submit" class="btn alazea-btn ">Mettre à Jour</button>
@@ -133,7 +133,7 @@
                             </div>
 
                             <div class="col-md-12 mt-5">
-                                <div class="contact-form-area mb-10">
+                                <div class="contact-form-area mb-1">
                                     <form action="{{ route('vendor.update.password') }}" method="post">
                                         @csrf
                                         <div class="row">
@@ -165,6 +165,12 @@
                                     </form>
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="row mb-15 justify-content-end">
+
+                                <a href="{{ route('Vendor.ma_position') }}"><i class="fa fa-map-marker"></i> Mettez vos coordonnées sur la carte</a>
+
 
                         </div>
                     </div>
@@ -210,7 +216,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <a  href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">Déconnexion</a>
                             </div>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -225,6 +231,7 @@
 
             </div>
         </div>
+
 
     </div>
 </div>

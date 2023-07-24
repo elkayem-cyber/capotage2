@@ -86,9 +86,7 @@
                                     @enderror
                                 </div>
                             </div>
-                        <div class="col-12">
-                            <div id="map" style="height: 450px;"></div>
-                        </div>
+
 
                             <div class="col-12">
                                 <button type="submit" class="btn alazea-btn mt-15">S'inscrire</button>
@@ -109,35 +107,7 @@
 
 <!-- Your existing HTML code -->
 
-<script>
-    function initMap() {
-        const parisLatLng = { lat: 48.8566, lng: 2.3522 }; // Coordinates for Paris
 
-        const map = new google.maps.Map(document.getElementById('map'), {
-            center: parisLatLng, // Set the map center to Paris
-            zoom: 15,
-        });
-
-        const marker = new google.maps.Marker({
-            map: map,
-            position: parisLatLng, // Set the marker position to Paris
-            draggable: true,
-        });
-
-        google.maps.event.addListener(marker, 'dragend', function (event) {
-            const latLng = event.latLng;
-            const latitudeInput = document.getElementById('latitude');
-            const longitudeInput = document.getElementById('longitude');
-
-            latitudeInput.value = latLng.lat();
-            longitudeInput.value = latLng.lng();
-        });
-    }
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5YFut7D0a2WFn7L6-PCmjEP92m4yoMMM&callback=initMap&libraries=places" async defer></script>
-{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5YFut7D0a2WFn7L6-PCmjEP92m4yoMMM&libraries=places"></script>
- --}}
 @endsection
 
 

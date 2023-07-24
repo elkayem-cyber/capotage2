@@ -133,7 +133,7 @@ class UpdateController extends Controller
                 'avatar.image'=>'il faut choisir une image',
 
             ]);
-      
+
         $vendor->first_name = $request->first_name;
         $vendor->last_name = $request->last_name;
         $vendor->phone_number = $request->phone_number;
@@ -169,11 +169,20 @@ class UpdateController extends Controller
 
             ]);
             $vendor=Auth::guard('vendor')->user();
-      
+
         $vendor->password = Hash::make($request->password);
         $vendor->save();
 
         return redirect()->back()->with('success', 'Mot de passe Changé  avec succès.');
+
+    }
+    public function update_position(Request $request){
+        $vendor=Auth::guard('vendor')->user();
+        $vendor->lat=$request->latitude;
+        $vendor->lng=$request->longitude;
+        $vendor->save();
+        return redirect()->back()->with('success', 'Changement Position avec succès.');
+
 
     }
 }

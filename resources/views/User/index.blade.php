@@ -79,11 +79,9 @@
                         </div>
                         <!-- Content -->
                         <div class="service-content">
-                            <h5>Entretien des plantes</h5>
+                            <h5>Partage et Échange de Produits Frais</h5>
                             <p>
-                                En prenant soin de vos plantes, nous veillons à leur bien-être
-                                et à leur croissance harmonieuse. Confiez-nous vos plantes et
-                                profitez d'un jardin verdoyant.
+                            Rejoignez notre communauté de jardiniers passionnés et profitez du partage et de l'échange de produits frais issus de vos potagers. Mettez en avant vos récoltes de "nano-maraîchage/élevage" et découvrez les délices cultivés avec amour par d'autres membres de la communauté. Échangez des conseils, des recettes et des astuces pour faire prospérer votre potager. 
                             </p>
                         </div>
                     </div>
@@ -96,11 +94,9 @@
                         </div>
                         <!-- Content -->
                         <div class="service-content">
-                            <h5>Nettoyage à haute pression</h5>
+                            <h5>Vente de Vos Excédents de Récoltes</h5>
                             <p>
-                                Avec notre service de nettoyage à haute pression, nous éliminons
-                                efficacement les saletés et les taches tenaces de vos surfaces
-                                extérieures. Redonnez vie à votre espace extérieur.
+                            Vous avez un potager généreux et souhaitez en faire profiter les autres ? Utilisez notre plateforme pour vendre vos excédents de récoltes à des acheteurs locaux. Proposez vos produits de qualité à petite échelle et contribuez à soutenir une consommation responsable et durable. 
                             </p>
                         </div>
                     </div>
@@ -113,12 +109,9 @@
                         </div>
                         <!-- Content -->
                         <div class="service-content">
-                            <h5>Services d'arbres et élagage</h5>
+                            <h5>Établissement de Liens Locaux</h5>
                             <p>
-                                Nos experts en arboriculture se chargent de l'entretien et de
-                                l'élagage de vos arbres pour garantir leur santé et leur
-                                esthétique. Confiez-nous vos arbres et profitez d'un
-                                environnement vert et soigné.
+                            Avec notre système de géolocalisation, découvrez les vendeurs et acheteurs potentiels à proximité de chez vous. Renforcez les liens entre jardiniers passionnés de votre région et favorisez les échanges locaux. Profitez d'une communauté bienveillante où l'entraide est au cœur de nos valeurs. 
                             </p>
                         </div>
                     </div>
@@ -204,11 +197,9 @@
                         <div class="col-12 col-sm-6">
                             <div class="single-benefits-area">
                                 <img src="{{ asset('assets/img/core-img/b1.png') }}" alt="" />
-                                <h5>Produits de qualité</h5>
+                                <h5>Qualité Exceptionnelle</h5>
                                 <p>
-                                    Nous proposons des produits de haute qualité pour garantir
-                                    votre satisfaction. Faites confiance à notre expertise pour
-                                    des résultats exceptionnels.
+                                Chez Ça potage, nous sommes fiers de vous proposer des produits d'une qualité exceptionnelle. Notre engagement envers l'excellence nous permet de vous offrir des récoltes et des produits frais de premier choix. Faites confiance à notre expertise en jardinage pour des résultats qui dépassent vos attentes. 
                                 </p>
                             </div>
                         </div>
@@ -217,11 +208,9 @@
                         <div class="col-12 col-sm-6">
                             <div class="single-benefits-area">
                                 <img src="{{ asset('assets/img/core-img/b2.png') }}" alt="" />
-                                <h5>Service parfait</h5>
+                                <h5>Service Attentionné</h5>
                                 <p>
-                                    Nous offrons un service impeccable pour répondre à tous vos
-                                    besoins. Notre équipe dévouée est là pour vous offrir une
-                                    expérience exceptionnelle.
+                                Nous mettons un point d'honneur à vous offrir un service attentionné et personnalisé. Notre équipe dévouée est là pour répondre à tous vos besoins et vous accompagner dans votre expérience sur la plateforme Ça potage. Nous sommes à votre écoute et nous nous efforçons de vous fournir une expérience utilisateur exceptionnelle. 
                                 </p>
                             </div>
                         </div>
@@ -230,11 +219,9 @@
                         <div class="col-12 col-sm-6">
                             <div class="single-benefits-area">
                                 <img src="{{ asset('assets/img/core-img/b3.png') }}" alt="" />
-                                <h5>100% naturel</h5>
+                                <h5>Naturel et Écologique</h5>
                                 <p>
-                                    Nos produits et nos pratiques respectent l'environnement.
-                                    Profitez de nos services naturels pour créer un espace sain et
-                                    préservé.
+                                Nous croyons en l'importance de préserver notre environnement. C'est pourquoi tous nos produits et pratiques respectent une approche naturelle et écologique. En choisissant Ça potage, vous contribuez à la préservation de notre belle planète tout en profitant d'un espace sain et préservé pour cultiver vos fruits et légumes. 
                                 </p>
                             </div>
                         </div>
@@ -243,11 +230,9 @@
                         <div class="col-12 col-sm-6">
                             <div class="single-benefits-area">
                                 <img src="{{ asset('assets/img/core-img/b4.png') }}" alt="" />
-                                <h5>Respect de l'environnement</h5>
+                                <h5>Engagement Écoresponsable</h5>
                                 <p>
-                                    Nous nous engageons à adopter des pratiques respectueuses de
-                                    l'environnement. Contribuons ensemble à la préservation de
-                                    notre belle planète.
+                                Nous sommes fiers de notre engagement écoresponsable. Chez Ça potage, nous privilégions des méthodes de jardinage respectueuses de l'environnement, dans le respect de la biodiversité et de l'équilibre écologique. Ensemble, participons à la préservation de notre terre et à la promotion d'une agriculture durable et respectueuse. 
                                 </p>
                             </div>
                         </div>

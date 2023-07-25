@@ -84,11 +84,9 @@
                   <div class="col-12 col-sm-6">
                     <div class="single-benefits-area">
                       <img src="{{ asset('assets/img/core-img/b1.png') }}" alt="" />
-                      <h5>Produits de qualité</h5>
+                      <h5>Qualité Exceptionnelle</h5>
                       <p>
-                        Nous proposons des produits de haute qualité pour garantir
-                        votre satisfaction. Faites confiance à notre expertise pour
-                        des résultats exceptionnels.
+                      Chez Ça potage, nous sommes fiers de vous proposer des produits d'une qualité exceptionnelle. Notre engagement envers l'excellence nous permet de vous offrir des récoltes et des produits frais de premier choix. Faites confiance à notre expertise en jardinage pour des résultats qui dépassent vos attentes. 
                       </p>
                     </div>
                   </div>
@@ -97,11 +95,9 @@
                   <div class="col-12 col-sm-6">
                     <div class="single-benefits-area">
                       <img src="{{ asset('assets/img/core-img/b2.png') }}" alt="" />
-                      <h5>Service parfait</h5>
+                      <h5>Service Attentionné</h5>
                       <p>
-                        Nous offrons un service impeccable pour répondre à tous vos
-                        besoins. Notre équipe dévouée est là pour vous offrir une
-                        expérience exceptionnelle.
+                      Nous mettons un point d'honneur à vous offrir un service attentionné et personnalisé. Notre équipe dévouée est là pour répondre à tous vos besoins et vous accompagner dans votre expérience sur la plateforme Ça potage. Nous sommes à votre écoute et nous nous efforçons de vous fournir une expérience utilisateur exceptionnelle. 
                       </p>
                     </div>
                   </div>
@@ -110,11 +106,9 @@
                   <div class="col-12 col-sm-6">
                     <div class="single-benefits-area">
                       <img src="{{ asset('assets/img/core-img/b3.png') }}" alt="" />
-                      <h5>100% naturel</h5>
+                      <h5>Naturel et Écologique</h5>
                       <p>
-                        Nos produits et nos pratiques respectent l'environnement.
-                        Profitez de nos services naturels pour créer un espace sain et
-                        préservé.
+                      Nous croyons en l'importance de préserver notre environnement. C'est pourquoi tous nos produits et pratiques respectent une approche naturelle et écologique. En choisissant Ça potage, vous contribuez à la préservation de notre belle planète tout en profitant d'un espace sain et préservé pour cultiver vos fruits et légumes. 
                       </p>
                     </div>
                   </div>
@@ -123,11 +117,9 @@
                   <div class="col-12 col-sm-6">
                     <div class="single-benefits-area">
                       <img src="{{ asset('assets/img/core-img/b4.png') }}" alt="" />
-                      <h5>Respect de l'environnement</h5>
+                      <h5>Engagement Écoresponsable</h5>
                       <p>
-                        Nous nous engageons à adopter des pratiques respectueuses de
-                        l'environnement. Contribuons ensemble à la préservation de
-                        notre belle planète.
+                      Nous sommes fiers de notre engagement écoresponsable. Chez Ça potage, nous privilégions des méthodes de jardinage respectueuses de l'environnement, dans le respect de la biodiversité et de l'équilibre écologique. Ensemble, participons à la préservation de notre terre et à la promotion d'une agriculture durable et respectueuse.  
                       </p>
                     </div>
                   </div>
